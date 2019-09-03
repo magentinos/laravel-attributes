@@ -23,7 +23,6 @@ class CreateAttributeEntityTable extends Migration
             $table->timestamps();
 
             // Indexes
-            $table->unique(['attribute_id', 'entity_type'], 'attributable_attribute_id_entity_type');
             $table->foreign('attribute_id')->references('id')->on(config('rinvex.attributes.tables.attributes'))
                   ->onDelete('cascade')->onUpdate('cascade');
         });
